@@ -1,0 +1,10 @@
+adminUser:
+  password: local:thumbcute/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: jenkins-x@googlegroups.com
+  token: local:thumbcute/pipelineUser:token
+  username: jenkins-x-bot-test
+prow:
+  hmacToken: local:thumbcute/prow:hmacToken
