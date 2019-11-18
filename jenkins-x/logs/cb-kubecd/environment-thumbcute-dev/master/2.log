@@ -1,0 +1,285 @@
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-credential-initializer-kkvtd[0m
+{"level":"warn","ts":1574098048.8802512,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574098048.8809416,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-gndl8[0m
+{"level":"warn","ts":1574098049.7731595,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1574098049.7749207,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-thumbcute-4k8cx[0m
+{"level":"warn","ts":1574098061.8651993,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574098062.4926422,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/cb-kubecd/environment-thumbcute-dev.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3f883947631b03e26d040ddb354c31752ab84344
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.209
+using version 2.0.998 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.0.998
+Kubernetes cluster v1.13.11-gke.14
+kubectl            v1.16.3
+helm client        Client: v2.14.3+g0e7f3b6
+git                2.21.0
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Validating Kaniko secret in namespace **
+
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 2
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.209
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 2
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-648873105/velero-backups/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 2
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.209
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+using a custom domain and GKE so enabling external dns, you can also now enable TLS
+validating the external-dns secret in namespace **
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 2
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.209
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Read credentials for https://charts.bitnami.com/bitnami from vault helm/repos
+Successfully added Helm repository charts.bitnami.com.
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/certificates.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/challenges.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.certmanager.k8s.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.certmanager.k8s.io configured
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 2
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.209
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Read credentials for https://charts.jetstack.io from vault helm/repos
+Successfully added Helm repository charts.jetstack.io.
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 2
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-588854345/acme/requirements.yaml so not checking for missing versions
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+applying vault ingress in namespace ** for vault name **-vault-thumbcute
+ingress.extensions/**-vault-thumbcute unchanged
+installing vault operator with helm values:  image.repository=banzaicloud/vault-operator,image.tag=0.5.3
+Installing vault-operator...
+
+vault-operator addon successfully installed.
+vault operator installed in namespace **
+finding vault '**-vault-thumbcute' in namespace **
+System vault named **-vault-thumbcute in namespace ** already exists
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme vault found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name thumbcute found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username ****************** [Automatically accepted existing value]
+Pipeline bot Git email address jenkins-x@googlegroups.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure an external Docker Registry? false [Automatically accepted existing value]
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 2
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/gke/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.209
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+Adding missing Helm repo: charts.cloudbees.com https://charts.cloudbees.com/c**d/cloudbees
+Read credentials for https://charts.cloudbees.com/c**d/cloudbees from vault helm/repos
+Successfully added Helm repository charts.cloudbees.com.
+
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/cb-kubecd/environment-thumbcute-dev.git
+Validating git repository for production environment at URL https://github.com/cb-kubecd/environment-thumbcute-production.git
+Using Git provider github at https://github.com
+? Using Git user name: ******************
+? Using organisation: cb-kubecd
+Creating repository cb-kubecd/environment-thumbcute-production
+Git repository cb-kubecd/environment-thumbcute-production already exists
+Pushed Git repository to https://github.com/cb-kubecd/environment-thumbcute-production
+
+Validating git repository for staging environment at URL https://github.com/cb-kubecd/environment-thumbcute-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: ******************
+? Using organisation: cb-kubecd
+Creating repository cb-kubecd/environment-thumbcute-staging
+Git repository cb-kubecd/environment-thumbcute-staging already exists
+Pushed Git repository to https://github.com/cb-kubecd/environment-thumbcute-staging
+
+Environment git repositories look good
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-repositories[0m
+Modified file /workspace/source/repositories/Chart.yaml to set the chart to version 2
+Ignoring templates/default-group.yaml
+No requirements file: /tmp/**-helm-apply-690236339/repositories/requirements.yaml so not checking for missing versions
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: finding service url for hook in namespace **
+DEBUG: couldn't find service url, attempting to look up via ingress
+DEBUG: found service url https://hook-**.rawlings-demo.co.uk
+DEBUG: getting vault name for namespace **
+DEBUG: system vault name from config **-vault-thumbcute
+DEBUG: Connecting to vault on http://**-vault-thumbcute:8200
+DEBUG: merging pipeline secrets with local secrets
+Updating webhooks for Owner: cb-kubecd and Repository: environment-thumbcute-dev in git server: https://github.com
+Checking hooks for repository cb-kubecd/environment-thumbcute-dev with user ******************
+Found matching hook for url https://hook-**.rawlings-demo.co.uk/hook
+Updating GitHub webhook for cb-kubecd/environment-thumbcute-dev for url https://hook-**.rawlings-demo.co.uk/hook
+DEBUG: getting vault name for namespace **
+DEBUG: system vault name from config **-vault-thumbcute
+DEBUG: Connecting to vault on http://**-vault-thumbcute:8200
+DEBUG: merging pipeline secrets with local secrets
+Updating webhooks for Owner: cb-kubecd and Repository: environment-thumbcute-production in git server: https://github.com
+Checking hooks for repository cb-kubecd/environment-thumbcute-production with user ******************
+Found matching hook for url https://hook-**.rawlings-demo.co.uk/hook
+Updating GitHub webhook for cb-kubecd/environment-thumbcute-production for url https://hook-**.rawlings-demo.co.uk/hook
+DEBUG: getting vault name for namespace **
+DEBUG: system vault name from config **-vault-thumbcute
+DEBUG: Connecting to vault on http://**-vault-thumbcute:8200
+DEBUG: merging pipeline secrets with local secrets
+Updating webhooks for Owner: cb-kubecd and Repository: environment-thumbcute-staging in git server: https://github.com
+Checking hooks for repository cb-kubecd/environment-thumbcute-staging with user ******************
+Found matching hook for url https://hook-**.rawlings-demo.co.uk/hook
+Updating GitHub webhook for cb-kubecd/environment-thumbcute-staging for url https://hook-**.rawlings-demo.co.uk/hook
+
+Showing logs for build [32mcb-kubecd-environment-thumbcute-z5xqt-2[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                            STATUS
+crier-6f75989446-kkcr9                         Running
+deck-6d844b55cb-5s2b2                          Running
+deck-6d844b55cb-wv2nk                          Running
+exdns-external-dns-5565fd54b8-7sgch            Running
+hook-756489b884-gz5f6                          Running
+hook-756489b884-tr7p6                          Running
+horologium-698fff5495-xr4fn                    Running
+jenkins-x-chartmuseum-67f75c4884-v2jpx         Running
+jenkins-x-controllerbuild-67fddfb956-gwc2w     Running
+jenkins-x-controllerrole-6b69d77c9b-6nb8j      Running
+jenkins-x-gcactivities-1574096400-7fvmv        Succeeded
+jenkins-x-gcactivities-1574098200-l7l6g        Succeeded
+jenkins-x-gcpods-1574096400-kchc4              Succeeded
+jenkins-x-gcpods-1574098200-6qxwd              Succeeded
+jenkins-x-heapster-66754b8fc5-sfncp            Running
+jenkins-x-**ui-fc6bfcd5f-fsf42                 Pending
+jenkins-x-nexus-57c8447c4-prx42                Running
+**-vault-thumbcute-0                           Running
+**-vault-thumbcute-configurer-5d7bf5c545-52745 Running
+pipeline-5d47c95bcd-rh76s                      Running
+pipelinerunner-557f6c494f-k9bst                Running
+tekton-pipelines-controller-65fff67458-shl5b   Running
+tide-56458c768c-n8fvv                          Running
+vault-operator-6fcbbbd78b-j2x5l                Running
+WARNING: the following pods are not ready:
+Pending: jenkins-x-**ui-fc6bfcd5f-fsf42
+
+Waiting 30m0s for the pods to become ready...
+
+WARNING: retrying after error: the following pods are not ready:
+Pending: jenkins-x-**ui-fc6bfcd5f-fsf42
+WARNING: retrying after error: the following pods are not ready:
+Running: jenkins-x-**ui-fc6bfcd5f-fsf42
+.
+.
+.
+.
+.
+
+POD                                            STATUS
+crier-6f75989446-kkcr9                         Running
+deck-6d844b55cb-5s2b2                          Running
+deck-6d844b55cb-wv2nk                          Running
+exdns-external-dns-5565fd54b8-7sgch            Running
+hook-756489b884-gz5f6                          Running
+hook-756489b884-tr7p6                          Running
+horologium-698fff5495-xr4fn                    Running
+jenkins-x-chartmuseum-67f75c4884-v2jpx         Running
+jenkins-x-controllerbuild-67fddfb956-gwc2w     Running
+jenkins-x-controllerrole-6b69d77c9b-6nb8j      Running
+jenkins-x-gcactivities-1574096400-7fvmv        Succeeded
+jenkins-x-gcactivities-1574098200-l7l6g        Succeeded
+jenkins-x-gcpods-1574096400-kchc4              Succeeded
+jenkins-x-gcpods-1574098200-6qxwd              Succeeded
+jenkins-x-heapster-66754b8fc5-sfncp            Running
+jenkins-x-**ui-fc6bfcd5f-fsf42                 Running
+jenkins-x-nexus-57c8447c4-prx42                Running
+**-vault-thumbcute-0                           Running
+**-vault-thumbcute-configurer-5d7bf5c545-52745 Running
+pipeline-5d47c95bcd-rh76s                      Running
+pipelinerunner-557f6c494f-k9bst                Running
+tekton-pipelines-controller-65fff67458-shl5b   Running
+tide-56458c768c-n8fvv                          Running
+vault-operator-6fcbbbd78b-j2x5l                Running
+Verifying the git Secrets
+Verifying git Secret **-pipeline-git-github-github
+Verifying username ****************** at git server github at https://github.com
+Found 6 organisations in git server https://github.com: arcalos-environments, cb-kubecd, cloudcat-meow, jenkins-x, jenkins-x-apps, jenkins-x-charts
+Validated pipeline user ****************** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
